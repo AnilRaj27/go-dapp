@@ -7,29 +7,41 @@ contract Todo {
         bool completed;
     }
 
+    // create a new default task
     constructor() {
         addTask("complete assignment by 22nd May.!");
     }
 
+    // dynamic array to store tasks
     Task[] tasks;
 
+    // creates a task and adds to the list
     function addTask(string memory _data) public {
         Task memory newTask = Task(_data, false);
         tasks.push(newTask);
     }
 
+    // gets a task provided a valid id
     function getTask(uint256 _id) public view returns (Task memory) {
         return tasks[_id];
     }
 
+    // returns the entire list of tasks stored
     function getTaskList() public view returns (Task[] memory) {
         return tasks;
     }
 
-    function updateTask(uint256 _id, string memory _data) public {
+    // toggles the task state provided an id of that task
+    function toggleCompleted(uint256 _id) public {
+        tasks[_id].completed = !tasks[_id].completed;
+    }
+
+    // updates the data of a particular task
+    function updateTaskData(uint256 _id, string memory _data) public {
         tasks[_id].data = _data;
     }
 
+    // removes the task from the task list
     function removeTask(uint256 _id) public {
         delete tasks[_id];
     }
