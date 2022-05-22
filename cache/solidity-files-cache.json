@@ -74,8 +74,8 @@
       ]
     },
     "/Users/anilrajthota/Documents/GitHub/go-dapp/contracts/Todo.sol": {
-      "lastModificationDate": 1653232448696,
-      "contentHash": "73f93b9e428fc058e7fca3de27e5390a",
+      "lastModificationDate": 1653234726298,
+      "contentHash": "ac61c25462abd21b1faf5fa939def044",
       "sourceName": "contracts/Todo.sol",
       "solcConfig": {
         "version": "0.8.4",

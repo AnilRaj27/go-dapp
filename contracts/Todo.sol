@@ -22,7 +22,7 @@ contract Todo {
     }
 
     // gets a task provided a valid id
-    function getTask(uint256 _id) public view returns (Task memory) {
+    function getTask(uint32 _id) public view returns (Task memory) {
         return tasks[_id];
     }
 
@@ -32,18 +32,18 @@ contract Todo {
     }
 
     // toggles the task state provided an id of that task
-    function toggleCompleted(uint256 _id) public {
+    function toggleCompleted(uint32 _id) public {
         tasks[_id].completed = !tasks[_id].completed;
     }
 
     // updates the data of a particular task
-    function updateTaskData(uint256 _id, string memory _data) public {
+    function updateTaskData(uint32 _id, string memory _data) public {
         tasks[_id].data = _data;
     }
 
     // removes the task from the task list
-    function removeTask(uint256 _id) public {
-        for (uint256 i = _id; i < tasks.length - 1; i++) {
+    function removeTask(uint32 _id) public {
+        for (uint32 i = _id; i < tasks.length - 1; i++) {
             tasks[i] = tasks[i + 1];
         }
         tasks.pop();

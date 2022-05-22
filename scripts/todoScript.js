@@ -12,16 +12,17 @@ async function main() {
   const todoFactory = await hre.ethers.getContractFactory("Todo");
   const todoContract = await todoFactory.deploy();
 
-  await todoContract.addTask("def");
-  const task = await todoContract.getTask(1);
-  let taskList = await todoContract.getTaskList();
-  await todoContract.updateTaskData(1, "test-msg");
-  taskList = await todoContract.getTaskList();
-  await todoContract.toggleCompleted(1);
-  await todoContract.removeTask(0);
-  taskList = await todoContract.getTaskList();
+  // Local Testing
+  // await todoContract.addTask("def");
+  // const task = await todoContract.getTask(1);
+  // let taskList = await todoContract.getTaskList();
+  // await todoContract.updateTaskData(1, "test-msg");
+  // taskList = await todoContract.getTaskList();
+  // await todoContract.toggleCompleted(1);
+  // await todoContract.removeTask(0);
+  // taskList = await todoContract.getTaskList();
 
-  console.log("taskList : ", taskList);
+  // console.log("taskList : ", taskList);
 
   await todoContract.deployed();
   console.log("Todo Contract deployed to:", todoContract.address);
