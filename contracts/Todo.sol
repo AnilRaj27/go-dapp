@@ -43,6 +43,9 @@ contract Todo {
 
     // removes the task from the task list
     function removeTask(uint256 _id) public {
-        delete tasks[_id];
+        for (uint256 i = _id; i < tasks.length - 1; i++) {
+            tasks[i] = tasks[i + 1];
+        }
+        tasks.pop();
     }
 }
