@@ -1,15 +1,6 @@
-# Basic Sample Hardhat Project
+# Interaction with Ethereum Smart Contracts using Go Application (geth)
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
+Developed a Todolist smart contract in solidity and the development environment used is hardhat, deployed to rinkeby network by using infura API and infrastructure. Using `solc` solidity compiler generated `abi` and `bin` file and using  `abigen` generated the `.go` from the Todo solidity contract.
+Also, written a go application which uses go ethereum packages and go bindings and interacts with the deployed smart contract via ethclient.
 
-Try running some of the following tasks:
 
-```shell
-npx hardhat accounts
-npx hardhat compile
-npx hardhat clean
-npx hardhat test
-npx hardhat node
-node scripts/sample-script.js
-npx hardhat help
-```
