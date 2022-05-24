@@ -166,6 +166,7 @@ func bindTodo(address common.Address, caller bind.ContractCaller, transactor bin
 	if err != nil {
 		return nil, err
 	}
+
 	return bind.NewBoundContract(address, parsed, caller, transactor, filterer), nil
 }
 
